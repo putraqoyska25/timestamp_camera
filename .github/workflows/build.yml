@@ -19,6 +19,9 @@ jobs:
         with:
           flutter-version: '3.27.x'
 
+      - name: Initialize Flutter project
+        run: flutter create --org com.example .
+
       - name: Get dependencies
         run: flutter pub get
 
