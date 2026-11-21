@@ -12,22 +12,25 @@ jobs:
       - name: Checkout kode
         uses: actions/checkout@v4
 
+      - name: Hapus folder android lama
+        run: rm -rf android
+
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0'
+          flutter-version: '3.22.0'
           channel: 'stable'
 
-      - name: ⚡ Buat ulang folder android
+      - name: Buat folder android baru
         run: flutter create --org com.example .
 
-      - name: 📦 Ambil dependensi
+      - name: Ambil dependensi
         run: flutter pub get
 
-      - name: 🔧 Bangun APK
+      - name: Bangun APK
         run: flutter build apk --release
 
-      - name: ✅ Upload APK
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Kamera-Tanda-Air
