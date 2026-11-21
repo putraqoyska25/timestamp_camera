@@ -1,6 +1,6 @@
 name: timestamp_camera
-description: A camera app with timestamp
-version: 1.0.0
+description: Kamera dengan Timestamp, GPS & Logo - 100% Offline
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -8,6 +8,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^1.0.0
+  camera: ^0.10.0+1
+  geolocator: ^11.0.0
+  gallery_saver: ^2.3.2
   path_provider: ^2.1.0
-  intl: ^0.19.0
+  shared_preferences: ^2.2.0
+  image_picker: ^1.0.0
+
+flutter:
+  uses-material-design: true
