@@ -12,14 +12,20 @@ jobs:
       - name: Checkout kode
         uses: actions/checkout@v4
 
-      - name: Hapus folder android lama
-        run: rm -rf android
+      - name: 📦 Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0'
+          flutter-version: '3.27.0'
           channel: 'stable'
+
+      - name: Hapus folder android lama
+        run: rm -rf android build
 
       - name: Buat folder android baru
         run: flutter create --org com.example .
